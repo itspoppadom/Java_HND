@@ -3,8 +3,8 @@ public class HumanUser extends BankBranch {
     private String bankCard;
     private String pinNum;
 
-    public HumanUser(String checkingAccount,String savingAccount,String branchName, String usersName, String bankCard, String pinNum) {
-        super(checkingAccount,savingAccount, branchName);
+    public HumanUser(String checkingAccount, String savingAccount, String branchID, String usersName, String bankCard, String pinNum) {
+        super(checkingAccount,savingAccount, branchID);
         this.usersName = usersName;
         this.bankCard = bankCard;
         this.pinNum = pinNum;
