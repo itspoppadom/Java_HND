@@ -14,8 +14,12 @@ public class Main {
             System.out.println(connection);
             System.out.println("Connected to database");
 
-            System.out.println("Please enter your UserID to search your details");
-            String userID = input.next().trim();  /* Always good to trim data when working with databases */
+            /* Gather all data from user database      */
+
+
+
+            /**System.out.println("Please enter your UserID to search your details");
+            String userID = input.next().trim();  /* Always good to trim data when working with databases
 
             String sql = "select * from account where userID = '"+userID+"'";
             PreparedStatement statement = connection.prepareStatement(sql);
