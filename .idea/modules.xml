@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/Lesson 4 - FileHandling Exercise/Lesson 4 - FileHandling Exercise.iml" filepath="$PROJECT_DIR$/Lesson 4 - FileHandling Exercise/Lesson 4 - FileHandling Exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lesson1.iml" filepath="$PROJECT_DIR$/Lesson1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lesson4-File Handling/Lesson4-File Handling.iml" filepath="$PROJECT_DIR$/Lesson4-File Handling/Lesson4-File Handling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson_5_ConnectDB/Lesson_5_ConnectDB.iml" filepath="$PROJECT_DIR$/Lesson_5_ConnectDB/Lesson_5_ConnectDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MoneyATM - DB Connect/MoneyATM - DB Connect.iml" filepath="$PROJECT_DIR$/MoneyATM - DB Connect/MoneyATM - DB Connect.iml" />
     </modules>
   </component>
 </project>

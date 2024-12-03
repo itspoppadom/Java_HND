@@ -1,8 +1,12 @@
 /* Import necessary libraries into the program*/
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -12,6 +16,7 @@ public class Route {
     private String arriveAt;
     private String midStopOne;
     private String midStopTwo;
+    private String fileName;
 
 
     public Route() {
@@ -20,16 +25,45 @@ public class Route {
         this.arriveAt = "";
         this.midStopOne = "";
         this.midStopTwo = "";
-
+        this.fileName = "Route.csv";
     }
-    public void writeRouteDetails(String routeID, String departFrom, String arriveAt, String midStopOne, String midStopTwo) {
+    public void writeFile(String routeID, String departFrom, String arriveAt, String midStopOne, String midStopTwo, String fileName) {
 
 
-        try(FileWriter file = new FileWriter("Route.csv", true)){
-
+        try(FileWriter file = new FileWriter(fileName, true)){
+            String writeData = routeID + "," + departFrom + "," + arriveAt + "," + midStopOne + "," + midStopTwo + "\n";
+            file.append(writeData);
         }catch (IOException e) {
             System.out.println("Sorry there was an issue writing Customer data to file." + e.getMessage());
         }
+    }
+
+    static ArrayList<Route> loadFile(String fileName) {
+
+        List<String> allItems;
+        ArrayList<Route> routes = new ArrayList<>();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(fileName));
+            String line = in.readLine();
+            while (line != null) {
+            allItems = Arrays.asList(line.split(","));
+            if (allItems.size() == 5 ) {
+                Route newRoute = new Route();
+                newRoute.routeID = allItems.get(0);
+                newRoute.departFrom = allItems.get(1);
+                newRoute.arriveAt = allItems.get(2);
+                newRoute.midStopOne = allItems.get(3);
+                newRoute.midStopTwo = allItems.get(4);
+                routes.add(newRoute);
+            } else {
+                System.out.println("Warning: Incorrect data format in line: " + line);
+            }
+            line = in.readLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error occured reading file: " + e.toString());
+        }
+        return routes;
     }
 
 
@@ -66,6 +100,9 @@ public class Route {
     }
     public void setMidStopTwo(String midStopTwo) {
         this.midStopTwo = midStopTwo;
+    }
+    public String getFileName() {
+        return fileName;
     }
 
 }

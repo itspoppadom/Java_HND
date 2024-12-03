@@ -32,7 +32,7 @@ public class Customer {
         this.filename = "Customer.csv";
     }
     /* Write customer data to file */
-    public void writeCustData(String customerID, String firstName, String lastName, String street, String town, String postCode, String filename) {
+    public void writeFile(String customerID, String firstName, String lastName, String street, String town, String postCode, String filename) {
 
         try(FileWriter file = new FileWriter(filename,true)) {
             String writeData = customerID + "," + firstName + "," + lastName + "," + street + "," + town + "," + postCode + "\n";
