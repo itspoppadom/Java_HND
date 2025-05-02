@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Account {
     private double balance;
-
     Scanner sc = new Scanner(System.in);
 
     public Account(){
