@@ -1,0 +1,62 @@
+@startuml
+class Customer {
+  - customerID: String
+  - firstName: String
+  - lastName: String
+  - street: String
+  - town: String
+  - postCode: String
+  - filename: String
+  + Customer()
+  + writeFile(customerID: String, firstName: String, lastName: String, street: String, town: String, postCode: String, filename: String): void
+  + {static} loadFile(filename: String): ArrayList<Customer>
+  + getters/setters
+}
+
+class Route {
+  - routeID: String
+  - departFrom: String
+  - arriveAt: String
+  - midStopOne: String
+  - midStopTwo: String
+  - fileName: String
+  + Route()
+  + writeFile(routeID: String, departFrom: String, arriveAt: String, midStopOne: String, midStopTwo: String, fileName: String): void
+  + {static} loadFile(fileName: String): ArrayList<Route>
+  + getters/setters
+}
+
+class Flight {
+  - flightID: String
+  - departureDate: String
+  - departureTime: String
+  - routeID: String
+  - arrivalTime: String
+  - arrivalDate: String
+  - capacity: String
+  - filename: String
+  + Flight()
+  + writeFile(flightID: String, departureDate: String, departureTime: String, routeID: String, arrivalDate: String, arrivalTime: String, capacity: String, filename: String): void
+  + {static} loadFile(filename: String): ArrayList<Flight>
+  + getters/setters
+}
+
+class Booking {
+  - bookingNo: String
+  - adultTicket: int
+  - childTicket: int
+  - concessionTicket: int
+  - customerID: String
+  - flightID: String
+  - filename: String
+  + Booking()
+  + writeFile(bookingNo: String, adultTicket: int, childTicket: int, concessionTicket: int, customerID: String, flightID: String, filename: String): void
+  + {static} readFile(filename: String): ArrayList<Booking>
+  + getters/setters
+}
+
+
+Booking --> Customer : references
+Booking --> Flight : references
+Flight --> Route : references
+@enduml
